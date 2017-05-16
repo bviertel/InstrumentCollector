@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Instrument View Controller-->
         <scene sceneID="zO6-sD-umE">
             <objects>
-                <viewController id="E2C-td-JHB" sceneMemberID="viewController">
+                <viewController id="E2C-td-JHB" customClass="InstrumentViewController" customModule="InstrumentCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TEh-Rn-UJQ"/>
                         <viewControllerLayoutGuide type="bottom" id="BTI-1y-ZsQ"/>
@@ -66,6 +66,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0X-fA-3Pg">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addTapped:" destination="E2C-td-JHB" eventType="touchUpInside" id="ud1-yz-vrp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -83,14 +86,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="0UL-DK-Xdj">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="7bI-rP-Fe8"/>
-                            <barButtonItem title="Photos" id="lRO-0P-Xpn"/>
+                            <barButtonItem systemItem="camera" id="7bI-rP-Fe8">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="E2C-td-JHB" id="nb8-3F-NgS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="lRO-0P-Xpn">
+                                <connections>
+                                    <action selector="photosTapped:" destination="E2C-td-JHB" id="qVT-Fx-2uw"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="instrumentImageView" destination="gLE-Do-2Op" id="VY3-9C-v1i"/>
+                        <outlet property="titleTextField" destination="Y1u-ni-TbK" id="xOq-vg-0pL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D55-p1-x5P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1799" y="139"/>
+            <point key="canvasLocation" x="2222" y="139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AXx-zn-oxa">

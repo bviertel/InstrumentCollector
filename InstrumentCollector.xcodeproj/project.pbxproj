@@ -63,8 +63,8 @@
 				281A38C51ECB8913009E47C4 /* 35037_10153400629351301_3963847537869179446_n.jpg */,
 				281A38B01ECB8482009E47C4 /* AppDelegate.swift */,
 				281A38B21ECB8482009E47C4 /* ViewController.swift */,
-				281A38B41ECB8482009E47C4 /* Main.storyboard */,
 				281A38C71ECB8A3E009E47C4 /* InstrumentViewController.swift */,
+				281A38B41ECB8482009E47C4 /* Main.storyboard */,
 				281A38BA1ECB8482009E47C4 /* Assets.xcassets */,
 				281A38BC1ECB8482009E47C4 /* LaunchScreen.storyboard */,
 				281A38BF1ECB8482009E47C4 /* Info.plist */,
@@ -313,6 +313,7 @@
 				281A38C41ECB8482009E47C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
