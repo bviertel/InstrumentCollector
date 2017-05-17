@@ -24,7 +24,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
         do {
             
             instruments = try context.fetch(Instrument.fetchRequest())

@@ -95,7 +95,7 @@
                                 <rect key="frame" x="165" y="384" width="45" height="30"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="deleteTapped:" destination="E2C-td-JHB" eventType="touchUpInside" id="USh-9S-FuV"/>
+                                    <action selector="deleteTapped:" destination="E2C-td-JHB" eventType="touchUpInside" id="Cey-SQ-GPw"/>
                                 </connections>
                             </button>
                         </subviews>
