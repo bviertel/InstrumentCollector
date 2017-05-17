@@ -56,6 +56,30 @@ class InstrumentViewController: UIViewController, UIImagePickerControllerDelegat
     }
 
     @IBAction func addTapped(_ sender: Any) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let instrument = Instrument(context: context)
+        
+        instrument.name = titleTextField.text
+        
+        // Gets image from the image view. However, instrument.image is an NSData object, and instrumentImageView is a UIImage, so we need to convert the UIImage to the NSData object by converting it to a PNG
+        
+        // Something fishy with NSData
+        
+        instrument.image = UIImagePNGRepresentation(instrumentImageView.image!) as NSData?
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
