@@ -54,6 +54,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let instrument = instruments[indexPath.row]
+        
+        performSegue(withIdentifier: "instrumentSegue", sender: instrument)
+    
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextVC  = segue.destination as! InstrumentViewController
+        
+        nextVC.instrument = sender as? Instrument
+    }
 
 }
 

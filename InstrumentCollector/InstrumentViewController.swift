@@ -10,22 +10,40 @@ import UIKit
 
 class InstrumentViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var deleteButton: UIButton!
+    
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var instrumentImageView: UIImageView!
     
+    @IBOutlet weak var addUpdateButton: UIButton!
     // Image Picker can be named whatever!
     
     var imagePicker = UIImagePickerController()
+    
+    // For new /preexisting
+    
+    var instrument : Instrument? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker.delegate = self
         
-        
-
-        // Do any additional setup after loading the view.
+        if instrument != nil {
+            
+            instrumentImageView.image = UIImage(data: instrument!.image as! Data)
+            
+            titleTextField.text = instrument!.name
+            
+            addUpdateButton.setTitle("Update", for: .normal)
+            
+        } else {
+            
+            deleteButton.isHidden = true
+            
+        }
+   
     }
     
     @IBAction func photosTapped(_ sender: Any) {
@@ -37,6 +55,7 @@ class InstrumentViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     // Gets info about selected image
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
        
         // UIImage: data around an image file
@@ -73,13 +92,6 @@ class InstrumentViewController: UIViewController, UIImagePickerControllerDelegat
         
         navigationController!.popViewController(animated: true)
         
-        
-        
-        
-        
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,14 +99,4 @@ class InstrumentViewController: UIViewController, UIImagePickerControllerDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
