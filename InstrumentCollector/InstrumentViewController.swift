@@ -98,6 +98,16 @@ class InstrumentViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
+        
+        // Where the Image Picker gets to select from
+        
+        imagePicker.sourceType = .camera
+        
+        // Displays the Photo Library to the user
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+        
     }
 
     @IBAction func addTapped(_ sender: Any) {
